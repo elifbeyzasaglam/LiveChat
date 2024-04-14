@@ -30,4 +30,14 @@ final class AuthManager {
             }
         }
     }
+    
+    func logout(completion: () -> ()) {
+        do {
+            try Auth.auth().signOut()
+            completion()
+            
+        } catch {
+            print(error)
+        }
+    }
 }
