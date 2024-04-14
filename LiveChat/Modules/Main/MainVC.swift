@@ -14,4 +14,9 @@ class MainVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func didTappedLogOutButton(_ sender: Any) {
+        AuthManager.shared.logout {
+            self.dismiss(animated: true)
+        }
+    }
 }
