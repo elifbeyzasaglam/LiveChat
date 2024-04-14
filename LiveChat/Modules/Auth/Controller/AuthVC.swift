@@ -49,6 +49,7 @@ class AuthVC: UIViewController {
     }
     
     @IBAction func signInButton(_ sender: UIButton) {
+        // TODO: Üst üste tıklamayı iptal et 
         if authVCStatus == .signUp {
             titleLabel.text = "Sign in to your account"
             authVCStatus = .signIn
@@ -61,6 +62,8 @@ class AuthVC: UIViewController {
                     case .success(let user):
                         print(user.uid)
                         self?.navigateToMainVC()
+                        let userModel = UserModel(id: user.uid, name: "", lastName: "", mail: user.email ?? "")
+                        RealtimeDatabaseManager.shared.saveUser(with: userModel, authId: user.uid)
                     case .failure(let error):
                         print(error)
                     }
@@ -77,6 +80,7 @@ class AuthVC: UIViewController {
     }
 
     @IBAction func forwardPasswordButton(_ sender: Any) {
+        
     }
     
 }
