@@ -13,6 +13,8 @@
 		E3571D302BA724A40092F249 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3571D2E2BA724A40092F249 /* LaunchScreen.storyboard */; };
 		E3571D3D2BA725430092F249 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3571D3B2BA725430092F249 /* AuthVC.swift */; };
 		E3571D3E2BA725430092F249 /* AuthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3571D3C2BA725430092F249 /* AuthVC.xib */; };
+		E3B64F652BCBCC7C00E2FC7D /* RealtimeDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B64F642BCBCC7C00E2FC7D /* RealtimeDatabaseManager.swift */; };
+		E3B64F672BCBCD0A00E2FC7D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B64F662BCBCD0A00E2FC7D /* UserModel.swift */; };
 		E3CA1B582BBB3B7900602676 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E3CA1B572BBB3B7900602676 /* FirebaseAnalytics */; };
 		E3CA1B5A2BBB3B7900602676 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = E3CA1B592BBB3B7900602676 /* FirebaseAnalyticsOnDeviceConversion */; };
 		E3CA1B5C2BBB3B7900602676 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3CA1B5B2BBB3B7900602676 /* FirebaseAnalyticsSwift */; };
@@ -42,6 +44,8 @@
 		E3571D312BA724A40092F249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3571D3B2BA725430092F249 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		E3571D3C2BA725430092F249 /* AuthVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthVC.xib; sourceTree = "<group>"; };
+		E3B64F642BCBCC7C00E2FC7D /* RealtimeDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDatabaseManager.swift; sourceTree = "<group>"; };
+		E3B64F662BCBCD0A00E2FC7D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E3CA1B6F2BBB3CD300602676 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E3D754E32BB9E6D5008E8E80 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		E3D754E42BB9E6D5008E8E80 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				E3571D3A2BA724FF0092F249 /* Supports */,
 				E3571D3F2BA7254D0092F249 /* Modules */,
 				E3CA1B6F2BBB3CD300602676 /* AuthManager.swift */,
+				E3B64F642BCBCC7C00E2FC7D /* RealtimeDatabaseManager.swift */,
+				E3B64F662BCBCD0A00E2FC7D /* UserModel.swift */,
 			);
 			path = LiveChat;
 			sourceTree = "<group>";
@@ -274,6 +280,8 @@
 			files = (
 				E3571D3D2BA725430092F249 /* AuthVC.swift in Sources */,
 				E3CA1B702BBB3CD300602676 /* AuthManager.swift in Sources */,
+				E3B64F672BCBCD0A00E2FC7D /* UserModel.swift in Sources */,
+				E3B64F652BCBCC7C00E2FC7D /* RealtimeDatabaseManager.swift in Sources */,
 				E3D754E52BB9E6D5008E8E80 /* MainVC.swift in Sources */,
 				E3FF27F92BB5A8C000B04564 /* MessageVC.swift in Sources */,
 				E3571D242BA724A20092F249 /* AppDelegate.swift in Sources */,
