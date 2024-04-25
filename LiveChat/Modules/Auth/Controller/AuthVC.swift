@@ -24,7 +24,13 @@ class AuthVC: UIViewController {
     private var authVCStatus: AuthVCStatus = .signIn
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            if user != nil {
+                self?.navigateToMainVC()
+            } else {
+                // TODO: AuthVC açılacak.
+            }
+        }
     }
     
     @IBAction func signUpButton(_ sender: UIButton) {
@@ -49,7 +55,7 @@ class AuthVC: UIViewController {
     }
     
     @IBAction func signInButton(_ sender: UIButton) {
-        // TODO: Üst üste tıklamayı iptal et 
+        // TODO: Üst üste tıklamayı iptal et
         if authVCStatus == .signUp {
             titleLabel.text = "Sign in to your account"
             authVCStatus = .signIn
@@ -73,7 +79,7 @@ class AuthVC: UIViewController {
     }
     
     private func navigateToMainVC() {
-        let mainVC = MainVC()
+        let mainVC = CustomTabBarController()
         let navigationController = UINavigationController(rootViewController: mainVC)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
