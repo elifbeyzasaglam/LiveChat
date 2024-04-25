@@ -13,6 +13,7 @@
 		E3571D302BA724A40092F249 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3571D2E2BA724A40092F249 /* LaunchScreen.storyboard */; };
 		E3571D3D2BA725430092F249 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3571D3B2BA725430092F249 /* AuthVC.swift */; };
 		E3571D3E2BA725430092F249 /* AuthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3571D3C2BA725430092F249 /* AuthVC.xib */; };
+		E3A9CF512BDA6D7E004D99CF /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9CF502BDA6D7E004D99CF /* CustomTabBarController.swift */; };
 		E3B64F652BCBCC7C00E2FC7D /* RealtimeDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B64F642BCBCC7C00E2FC7D /* RealtimeDatabaseManager.swift */; };
 		E3B64F672BCBCD0A00E2FC7D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B64F662BCBCD0A00E2FC7D /* UserModel.swift */; };
 		E3CA1B582BBB3B7900602676 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E3CA1B572BBB3B7900602676 /* FirebaseAnalytics */; };
@@ -44,6 +45,7 @@
 		E3571D312BA724A40092F249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3571D3B2BA725430092F249 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		E3571D3C2BA725430092F249 /* AuthVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthVC.xib; sourceTree = "<group>"; };
+		E3A9CF502BDA6D7E004D99CF /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		E3B64F642BCBCC7C00E2FC7D /* RealtimeDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDatabaseManager.swift; sourceTree = "<group>"; };
 		E3B64F662BCBCD0A00E2FC7D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E3CA1B6F2BBB3CD300602676 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				E3571D402BA725530092F249 /* Auth */,
 				E3FF27FB2BB5A8D900B04564 /* Message */,
 				E3D754E72BB9E6D9008E8E80 /* Main */,
+				E3A9CF502BDA6D7E004D99CF /* CustomTabBarController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				E3FF27F92BB5A8C000B04564 /* MessageVC.swift in Sources */,
 				E3571D242BA724A20092F249 /* AppDelegate.swift in Sources */,
 				E3571D262BA724A20092F249 /* SceneDelegate.swift in Sources */,
+				E3A9CF512BDA6D7E004D99CF /* CustomTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
