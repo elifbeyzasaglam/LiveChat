@@ -9,7 +9,8 @@ import Foundation
 
 struct UserModel: Codable {
     let id: String
-    let name: String
-    let lastName: String
+    var name: String
+    var lastName: String
     let mail: String
+    var userName: String
 }

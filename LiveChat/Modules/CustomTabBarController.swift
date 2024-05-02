@@ -19,5 +19,7 @@ class CustomTabBarController: UITabBarController {
         messageVC.tabBarItem.image = UIImage(systemName: "message")
         messageVC.tabBarItem.selectedImage = UIImage(systemName: "message.fill")
         setViewControllers([messageVC], animated: true)
+        
+        
     }
 }

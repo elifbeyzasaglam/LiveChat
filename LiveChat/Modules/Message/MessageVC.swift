@@ -8,12 +8,14 @@
 import UIKit
 
 class MessageVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        AuthManager.shared.logout {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.dismiss(animated: true)
+            }
         }
     }
-
-
+}
 

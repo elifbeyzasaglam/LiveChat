@@ -26,7 +26,8 @@ class AuthVC: UIViewController {
         super.viewDidLoad()
         Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             if user != nil {
-                self?.navigateToMainVC()
+                // TODO: RealtimeDatabase'de user'ın olup olmadığını kontrol et.
+//                self?.navigateToMainVC()
             } else {
                 // TODO: AuthVC açılacak.
             }
@@ -45,7 +46,11 @@ class AuthVC: UIViewController {
                     switch result {
                     case .success(let user):
                         print(user.uid)
-                        self?.navigateToMainVC()
+//                        self?.navigateToMainVC()
+                        let userModel = UserModel(id: user.uid, name: "", lastName: "", mail: user.email ?? "", userName: "")
+                        RealtimeDatabaseManager.shared.saveUser(with: userModel, authId: user.uid) {
+                            self?.navigateToCompleteProfileVC()
+                        }
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -68,8 +73,6 @@ class AuthVC: UIViewController {
                     case .success(let user):
                         print(user.uid)
                         self?.navigateToMainVC()
-                        let userModel = UserModel(id: user.uid, name: "", lastName: "", mail: user.email ?? "")
-                        RealtimeDatabaseManager.shared.saveUser(with: userModel, authId: user.uid)
                     case .failure(let error):
                         print(error)
                     }
@@ -81,6 +84,13 @@ class AuthVC: UIViewController {
     private func navigateToMainVC() {
         let mainVC = CustomTabBarController()
         let navigationController = UINavigationController(rootViewController: mainVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
+    }
+    
+    private func navigateToCompleteProfileVC() {
+        let completeProfileVC = CompleteProfileVC()
+        let navigationController = UINavigationController(rootViewController: completeProfileVC)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
     }

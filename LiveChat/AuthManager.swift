@@ -11,6 +11,14 @@ import FirebaseAuth
 final class AuthManager {
     static let shared = AuthManager()
     
+    var userId: String {
+        if let uid = Auth.auth().currentUser?.uid {
+            return uid
+        } else {
+            return ""
+        }
+    }
+    
     func signUp(mail: String, password: String, completion: @escaping (Result<User, Error>) -> ()) {
         Auth.auth().createUser(withEmail: mail, password: password) { result, error in
             if let error {
@@ -40,4 +48,6 @@ final class AuthManager {
             print(error)
         }
     }
+    
+    
 }

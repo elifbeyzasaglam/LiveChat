@@ -13,10 +13,11 @@ final class RealtimeDatabaseManager {
     
     private init() { }
     
-    func saveUser(with model: UserModel, authId: String) {
+    func saveUser(with model: UserModel, authId: String, completion: () -> ()) {
         let ref = Database.database().reference()
         do {
             try ref.child("users").child(authId).setValue(from: model)
+            completion()
         } catch {
             print(error)
         }
