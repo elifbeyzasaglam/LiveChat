@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E30F825C2BEBBCA9004C3E03 /* MessageListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F825A2BEBBCA9004C3E03 /* MessageListVC.swift */; };
+		E30F825D2BEBBCA9004C3E03 /* MessageListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E30F825B2BEBBCA9004C3E03 /* MessageListVC.xib */; };
 		E3571D242BA724A20092F249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3571D232BA724A20092F249 /* AppDelegate.swift */; };
 		E3571D262BA724A20092F249 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3571D252BA724A20092F249 /* SceneDelegate.swift */; };
 		E3571D2D2BA724A40092F249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3571D2C2BA724A40092F249 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E30F825A2BEBBCA9004C3E03 /* MessageListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListVC.swift; sourceTree = "<group>"; };
+		E30F825B2BEBBCA9004C3E03 /* MessageListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageListVC.xib; sourceTree = "<group>"; };
 		E3571D202BA724A20092F249 /* LiveChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3571D232BA724A20092F249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3571D252BA724A20092F249 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E30F82532BEBBB3A004C3E03 /* MessageList */ = {
+			isa = PBXGroup;
+			children = (
+				E30F825A2BEBBCA9004C3E03 /* MessageListVC.swift */,
+				E30F825B2BEBBCA9004C3E03 /* MessageListVC.xib */,
+			);
+			path = MessageList;
+			sourceTree = "<group>";
+		};
 		E3571D172BA724A20092F249 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +156,7 @@
 		E3571D3F2BA7254D0092F249 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E30F82532BEBBB3A004C3E03 /* MessageList */,
 				E3571D402BA725530092F249 /* Auth */,
 				E3FF27FB2BB5A8D900B04564 /* Message */,
 				E3D754E72BB9E6D9008E8E80 /* Main */,
@@ -279,6 +293,7 @@
 				E3571D302BA724A40092F249 /* LaunchScreen.storyboard in Resources */,
 				E3571D2D2BA724A40092F249 /* Assets.xcassets in Resources */,
 				E393799B2BE2A2DC00B0FFFE /* CompleteProfileVC.xib in Resources */,
+				E30F825D2BEBBCA9004C3E03 /* MessageListVC.xib in Resources */,
 				E3D754E62BB9E6D5008E8E80 /* MainVC.xib in Resources */,
 				E3FF27FA2BB5A8C000B04564 /* MessageVC.xib in Resources */,
 				E3571D3E2BA725430092F249 /* AuthVC.xib in Resources */,
@@ -296,6 +311,7 @@
 				E3CA1B702BBB3CD300602676 /* AuthManager.swift in Sources */,
 				E3B64F672BCBCD0A00E2FC7D /* UserModel.swift in Sources */,
 				E393799A2BE2A2DC00B0FFFE /* CompleteProfileVC.swift in Sources */,
+				E30F825C2BEBBCA9004C3E03 /* MessageListVC.swift in Sources */,
 				E3B64F652BCBCC7C00E2FC7D /* RealtimeDatabaseManager.swift in Sources */,
 				E3D754E52BB9E6D5008E8E80 /* MainVC.swift in Sources */,
 				E3FF27F92BB5A8C000B04564 /* MessageVC.swift in Sources */,
