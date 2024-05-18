@@ -6,20 +6,29 @@
 //
 
 import UIKit
-
+import FirebaseDatabase
 class CustomTabBarController: UITabBarController {
 
-    let messageVC = MessageVC()
+    let messageVC = MessageListVC()
+    let homeVC = UIViewController()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 
         messageVC.title = "Mesajlar"
         messageVC.tabBarItem.image = UIImage(systemName: "message")
         messageVC.tabBarItem.selectedImage = UIImage(systemName: "message.fill")
-        setViewControllers([messageVC], animated: true)
         
+        homeVC.title = "Ana Sayfa"
+        homeVC.tabBarItem.image = UIImage(systemName: "house")
+        homeVC.tabBarItem.selectedImage = UIImage(systemName: "house.fill")
+        
+        setViewControllers([homeVC,messageVC], animated: true)
+        
+        
+
         
     }
 }

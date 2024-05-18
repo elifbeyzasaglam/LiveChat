@@ -90,9 +90,9 @@ class AuthVC: UIViewController {
     
     private func navigateToCompleteProfileVC() {
         let completeProfileVC = CompleteProfileVC()
-        let navigationController = UINavigationController(rootViewController: completeProfileVC)
-        navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true)
+//        let navigationController = UINavigationController(rootViewController: completeProfileVC)
+        completeProfileVC.modalPresentationStyle = .fullScreen
+        present(completeProfileVC, animated: true)
     }
 
     @IBAction func forwardPasswordButton(_ sender: Any) {

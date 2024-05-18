@@ -45,9 +45,17 @@ final class CompleteProfileVC: UIViewController {
         
         do {
             try currentUser.setValue(from: self.user)
+            self.navigateToMainVC()
         } catch {
             print("foo err: \(error)")
         }
+    }
+    
+    private func navigateToMainVC() {
+        let mainVC = CustomTabBarController()
+        let navigationController = UINavigationController(rootViewController: mainVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
     }
 
 
