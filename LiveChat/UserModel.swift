@@ -13,4 +13,5 @@ struct UserModel: Codable {
     var lastName: String
     let mail: String
     var userName: String
+    var chatRoomIds: [String]?
 }

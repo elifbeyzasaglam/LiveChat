@@ -53,9 +53,21 @@ class MessageListVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        // sohbeti burda göster!!
+        print("foo user: \(userList[indexPath.row].id) - \(AuthManager.shared.userId)")
+        let uuid = compareUUID(firstId: AuthManager.shared.userId, secondId: userList[indexPath.row].id)
+        FirestoreManager.shared.searchRoom(with: AuthManager.shared.userId, secondId: userList[indexPath.row].id)
+//        referance.child("users").child(userList[indexPath.row].id).updateChildValues(["chatRoomIds": [uuid]])
+//        referance.child("users").child(AuthManager.shared.userId).updateChildValues(["chatRoomIds": [uuid]])
     }
  
+    private func compareUUID(firstId: String, secondId: String) -> String {
+        if firstId < secondId {
+            return "\(firstId)_\(secondId)"
+        } else if firstId > secondId {
+            return "\(secondId)_\(firstId)"
+        } else {
+            return "\(firstId)_\(secondId)"
+        }
+    }
 
 }
