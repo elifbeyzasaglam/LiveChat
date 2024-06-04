@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Message" customModule="LiveChat" customModuleProvider="target">
             <connections>
+                <outlet property="messageTextField" destination="ISd-A3-h01" id="T0d-cm-rj2"/>
+                <outlet property="tableView" destination="ora-q5-xy6" id="vyQ-Bk-8b5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,23 +20,48 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEQ-PZ-dvt">
-                    <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ora-q5-xy6">
+                    <rect key="frame" x="0.0" y="59" width="393" height="719"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etz-qa-a7H">
+                    <rect key="frame" x="16" y="778" width="361" height="40"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ISd-A3-h01">
+                            <rect key="frame" x="0.0" y="0.0" width="310.33333333333331" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2P-4U-IAm">
+                            <rect key="frame" x="310.33333333333331" y="0.0" width="50.666666666666686" height="40"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system"/>
+                            <connections>
+                                <action selector="sendMessageButtonTapped:" destination="-1" eventType="touchUpInside" id="h52-dT-0bC"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="rHj-Uq-Tcn"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="nEQ-PZ-dvt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="SIN-Gz-q3p"/>
-                <constraint firstItem="nEQ-PZ-dvt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lsy-KI-ysL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ora-q5-xy6" secondAttribute="trailing" id="1K1-kY-rGJ"/>
+                <constraint firstItem="ora-q5-xy6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jdk-9J-dBq"/>
+                <constraint firstItem="etz-qa-a7H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="NJt-Re-AK4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="etz-qa-a7H" secondAttribute="trailing" constant="16" id="PXZ-KB-kNM"/>
+                <constraint firstItem="etz-qa-a7H" firstAttribute="top" secondItem="ora-q5-xy6" secondAttribute="bottom" id="VR9-Kw-qfE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="etz-qa-a7H" secondAttribute="bottom" id="h1O-Mx-B7Y"/>
+                <constraint firstItem="ora-q5-xy6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tOH-Rm-dSJ"/>
             </constraints>
-            <point key="canvasLocation" x="113" y="21"/>
+            <point key="canvasLocation" x="112.21374045801527" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
+        <image name="paperplane.fill" catalog="system" width="128" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

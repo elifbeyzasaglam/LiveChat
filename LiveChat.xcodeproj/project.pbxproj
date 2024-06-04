@@ -36,6 +36,11 @@
 		E3CA1B702BBB3CD300602676 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA1B6F2BBB3CD300602676 /* AuthManager.swift */; };
 		E3D754E52BB9E6D5008E8E80 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D754E32BB9E6D5008E8E80 /* MainVC.swift */; };
 		E3D754E62BB9E6D5008E8E80 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3D754E42BB9E6D5008E8E80 /* MainVC.xib */; };
+		E3F463B22C0DE1EC00ED725A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F463B12C0DE1EC00ED725A /* UIApplication+Extension.swift */; };
+		E3F463B52C0DE28200ED725A /* SenderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F463B42C0DE28200ED725A /* SenderCell.xib */; };
+		E3F463B62C0DE28200ED725A /* SenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F463B32C0DE28200ED725A /* SenderCell.swift */; };
+		E3F463BA2C0DE35D00ED725A /* RecevierCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F463B92C0DE35D00ED725A /* RecevierCell.xib */; };
+		E3F463BB2C0DE35D00ED725A /* RecevierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F463B82C0DE35D00ED725A /* RecevierCell.swift */; };
 		E3F501E82BB052C500FAF677 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3F501E72BB052C500FAF677 /* GoogleService-Info.plist */; };
 		E3FF27F92BB5A8C000B04564 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF27F72BB5A8C000B04564 /* MessageVC.swift */; };
 		E3FF27FA2BB5A8C000B04564 /* MessageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3FF27F82BB5A8C000B04564 /* MessageVC.xib */; };
@@ -64,6 +69,11 @@
 		E3CA1B6F2BBB3CD300602676 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E3D754E32BB9E6D5008E8E80 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		E3D754E42BB9E6D5008E8E80 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
+		E3F463B12C0DE1EC00ED725A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		E3F463B32C0DE28200ED725A /* SenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderCell.swift; sourceTree = "<group>"; };
+		E3F463B42C0DE28200ED725A /* SenderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderCell.xib; sourceTree = "<group>"; };
+		E3F463B82C0DE35D00ED725A /* RecevierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecevierCell.swift; sourceTree = "<group>"; };
+		E3F463B92C0DE35D00ED725A /* RecevierCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecevierCell.xib; sourceTree = "<group>"; };
 		E3F501E72BB052C500FAF677 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3FF27F72BB5A8C000B04564 /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
 		E3FF27F82BB5A8C000B04564 /* MessageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageVC.xib; sourceTree = "<group>"; };
@@ -128,6 +138,7 @@
 				E3722AC52C00D785005F8AD1 /* FirestoreManager.swift */,
 				E3B64F662BCBCD0A00E2FC7D /* UserModel.swift */,
 				E3722AC92C00DD40005F8AD1 /* MessageModel.swift */,
+				E3F463B12C0DE1EC00ED725A /* UIApplication+Extension.swift */,
 			);
 			path = LiveChat;
 			sourceTree = "<group>";
@@ -223,11 +234,23 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		E3F463B72C0DE34300ED725A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E3F463B32C0DE28200ED725A /* SenderCell.swift */,
+				E3F463B42C0DE28200ED725A /* SenderCell.xib */,
+				E3F463B82C0DE35D00ED725A /* RecevierCell.swift */,
+				E3F463B92C0DE35D00ED725A /* RecevierCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E3FF27FB2BB5A8D900B04564 /* Message */ = {
 			isa = PBXGroup;
 			children = (
 				E3FF27F72BB5A8C000B04564 /* MessageVC.swift */,
 				E3FF27F82BB5A8C000B04564 /* MessageVC.xib */,
+				E3F463B72C0DE34300ED725A /* Cells */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -311,8 +334,10 @@
 				E393799B2BE2A2DC00B0FFFE /* CompleteProfileVC.xib in Resources */,
 				E3722AD12C00DF4C005F8AD1 /* ChatVC.xib in Resources */,
 				E30F825D2BEBBCA9004C3E03 /* MessageListVC.xib in Resources */,
+				E3F463BA2C0DE35D00ED725A /* RecevierCell.xib in Resources */,
 				E3D754E62BB9E6D5008E8E80 /* MainVC.xib in Resources */,
 				E3FF27FA2BB5A8C000B04564 /* MessageVC.xib in Resources */,
+				E3F463B52C0DE28200ED725A /* SenderCell.xib in Resources */,
 				E3571D3E2BA725430092F249 /* AuthVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,8 +360,11 @@
 				E3722AD02C00DF4C005F8AD1 /* ChatVC.swift in Sources */,
 				E3722AC62C00D785005F8AD1 /* FirestoreManager.swift in Sources */,
 				E3FF27F92BB5A8C000B04564 /* MessageVC.swift in Sources */,
+				E3F463BB2C0DE35D00ED725A /* RecevierCell.swift in Sources */,
 				E3571D242BA724A20092F249 /* AppDelegate.swift in Sources */,
+				E3F463B62C0DE28200ED725A /* SenderCell.swift in Sources */,
 				E3571D262BA724A20092F249 /* SceneDelegate.swift in Sources */,
+				E3F463B22C0DE1EC00ED725A /* UIApplication+Extension.swift in Sources */,
 				E3A9CF512BDA6D7E004D99CF /* CustomTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

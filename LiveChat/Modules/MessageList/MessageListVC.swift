@@ -23,22 +23,10 @@ class MessageListVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     private func fetchUserList() {
-        referance.child("users")
-            .observe(.value) { snapshot in
-                if let valueDictionary = snapshot.value as? [String: Any] {
-                    do {
-                        let jsonData = try JSONSerialization.data(withJSONObject: valueDictionary)
-                        let decoder = JSONDecoder()
-                        let userDecoded = try decoder.decode([String: UserModel].self, from: jsonData)
-                        print(userDecoded)
-                        // TODO: GİRİŞ YAPILAN ARRAY İÇİNDEN SİLİNECEK.
-                        self.userList = userDecoded.map({ $0.1 }) // firstIndex
-                        self.messageListTable.reloadData()
-                    } catch {
-                        print("foo error: \(error)")
-                    }
-                }
-            }
+        RealtimeDatabaseManager.shared.fetchUsers { userList in
+            self.userList = userList
+            self.messageListTable.reloadData()
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userList.count
@@ -53,9 +41,12 @@ class MessageListVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("foo user: \(userList[indexPath.row].id) - \(AuthManager.shared.userId)")
         let uuid = compareUUID(firstId: AuthManager.shared.userId, secondId: userList[indexPath.row].id)
-        FirestoreManager.shared.searchRoom(with: AuthManager.shared.userId, secondId: userList[indexPath.row].id)
+        
+        let messageVC = MessageVC()
+        messageVC.uuid = uuid
+        messageVC.selectedUserId = userList[indexPath.row].id
+        UIApplication.topViewController()?.navigationController?.pushViewController(messageVC, animated: true)
 //        referance.child("users").child(userList[indexPath.row].id).updateChildValues(["chatRoomIds": [uuid]])
 //        referance.child("users").child(AuthManager.shared.userId).updateChildValues(["chatRoomIds": [uuid]])
     }
